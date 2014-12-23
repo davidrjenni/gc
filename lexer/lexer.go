@@ -4,6 +4,18 @@
 
 //go:generate stringer -type Type
 
+/*
+Package lexer provides a lexical analyser for the language.
+The lexer passes the tokens to a channel from which a client can read.
+
+	lexer := Lex(filename, reader)
+	for token := range lexer.Tokens {
+		// do something with the token
+		if token.Type == EOF {
+			break // we are done
+		}
+	}
+*/
 package lexer
 
 import (
