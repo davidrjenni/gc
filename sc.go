@@ -13,3 +13,6 @@ Example usage:
 	% ./gcf
 */
 package main
+
+func main() {
+}
