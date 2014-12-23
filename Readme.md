@@ -1,3 +1,7 @@
+[![Build Status](https://drone.io/github.com/davidrjenni/sc/status.png)](https://drone.io/github.com/davidrjenni/sc/latest)
+
+[![GoDoc](https://godoc.org/github.com/davidrjenni/sc?status.svg)](https://godoc.org/github.com/davidrjenni/sc)
+
 # sc - simple compiler
 
 sc is a simple compiler. It compiles a very simple subset of the [Go programming language](http://golang.org).
