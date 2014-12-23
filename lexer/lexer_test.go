@@ -97,10 +97,9 @@ func TestLex(t *testing.T) {
 // collect scans all tokens of a lexer test and puts them into a slice.
 func collect(test *lexerTest) (tokens []Token) {
 	l := Lex(test.name, strings.NewReader(test.input))
-	for {
-		i := <-l.Tokens
-		tokens = append(tokens, i)
-		if i.Type == EOF {
+	for t := range l.Tokens {
+		tokens = append(tokens, t)
+		if t.Type == EOF {
 			break
 		}
 	}
