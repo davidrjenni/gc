@@ -102,13 +102,13 @@ func (t Token) String() string {
 
 // Lexer represents the lexical analyser.
 type Lexer struct {
-	Tokens  chan Token
+	Tokens  chan Token // channel of tokens
 	scanner scanner.Scanner
 	braces  int // nesting of braces
 	parens  int // nesting of parens
 }
 
-// Lex creates a new lexer for the input source.
+// Lex creates a new lexer for the input source and starts analyzing the input source.
 func Lex(filename string, src io.Reader) *Lexer {
 	l := &Lexer{Tokens: make(chan Token)}
 	l.scanner.Init(src)
@@ -215,6 +215,7 @@ func lexSource(l *Lexer) stateFn {
 
 // lexIdent scans an alphanumeric identifier.
 func lexIdent(l *Lexer) stateFn {
+	// Check whether the identifier is a keyword.
 	typ, ok := keywords[l.scanner.TokenText()]
 	if !ok {
 		typ = Ident
