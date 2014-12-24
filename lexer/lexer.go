@@ -8,10 +8,10 @@
 Package lexer provides a lexical analyser for the language.
 The lexer passes the tokens to a channel from which a client can read.
 
-	lexer := Lex(filename, reader)
-	for token := range lexer.Tokens {
+	l := lexer.Lex(filename, reader)
+	for token := range l.Tokens {
 		// do something with the token
-		if token.Type == EOF {
+		if token.Type == lexer.EOF {
 			break // we are done
 		}
 	}
