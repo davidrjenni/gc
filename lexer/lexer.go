@@ -124,7 +124,7 @@ func (l *Lexer) emit(pos scanner.Position, text string, typ Type) {
 
 // emitHere emits the current token to the channel of tokens.
 func (l *Lexer) emitHere(typ Type) {
-	l.Tokens <- Token{l.scanner.Position, l.scanner.TokenText(), typ}
+	l.emit(l.scanner.Position, l.scanner.TokenText(), typ)
 }
 
 // emitIfNext emits a token of type t1 if r matches the next rune. Otherwise a token of type t2 is emitted.
