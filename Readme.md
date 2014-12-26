@@ -83,11 +83,11 @@ Following character sequences act as operators.
 #### Comments
 There are two forms of comments. They do not nest.
 
-1. Line comments terminate at the end of the line. They act like a newline.
+- Line comments terminate at the end of the line. They act like a newline.
 
 ```// Characters EOL```
 
-2. Block comments can span multiple lines. They act like a space. If they span one or more lines, the act as a newline.
+- Block comments can span multiple lines. They act like a space. If they span one or more lines, the act as a newline.
 
 ```/* Characters */```
 
