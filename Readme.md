@@ -6,7 +6,7 @@
 
 sc is a simple compiler. It compiles a very simple subset of the [Go programming language](http://golang.org).
 
-The language has the types ``bool`` and ``int``. The control structures are ``if``, ``else`` and ``while``.
+The language has the types ``bool`` and ``int``. The control structures are ``if``, ``else`` and ``for``.
 
 ***
 
@@ -21,7 +21,7 @@ var f int
 
 a = 45
 b = 60
-while a != b {
+for a != b {
     if a < b {
         b = b - a
     }
@@ -44,7 +44,7 @@ stmt    : var "=" expr
         | "var" ident type
         | "if" expr "{" stmts "}"
         | "if" expr "{" stmts "}" "else" "{" stmts "}"
-        | "while" expr "{" stmts "}"
+        | "for" expr "{" stmts "}"
         ;
 expr    : "(" expr ")"
         | expr binop expr
@@ -68,7 +68,7 @@ Each ``else`` associates with the nearest ``if``.
 #### Keywords
 Following keywords are reserved. They cannot be used as identifiers.
 
-```bool, else, false, if, int, true, var, while```
+```bool, else, false, for, if, int, true, var```
 
 #### Operators and delimiters
 Following character sequences act as delimiters.
@@ -96,7 +96,7 @@ There are two forms of comments. They do not nest.
 ### Semantics
 - Variables of type ``int`` are initialized with ``0``.
 - Variables of type ``bool`` are initialized with ``false``.
-- ``if`` and ``while`` statements only accept expressions of type ``bool``.
+- ``if`` and ``for`` statements only accept expressions of type ``bool``.
 
 #### Operators
 - Following operators are binary operators.

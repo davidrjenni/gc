@@ -36,10 +36,10 @@ const (
 	Number // integer number
 	True   // true
 	// Keywords
-	Else  // else
-	If    // if
-	Var   // var
-	While // while
+	Else // else
+	For  // for
+	If   // if
+	Var  // var
 	// Types
 	Bool // bool
 	Int  // int
@@ -73,11 +73,11 @@ var keywords = map[string]Type{
 	"bool":  Bool,
 	"else":  Else,
 	"false": False,
+	"for":   For,
 	"if":    If,
 	"int":   Int,
 	"true":  True,
 	"var":   Var,
-	"while": While,
 }
 
 // Token represents a token.

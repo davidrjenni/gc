@@ -5,7 +5,7 @@ var f int
 
 a = 45
 b = 60
-while a != b {
+for a != b {
     if a < b {
         b = b - a
     }
