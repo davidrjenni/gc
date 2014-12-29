@@ -4,9 +4,9 @@ package lexer
 
 import "fmt"
 
-const _Type_name = "EOFErrorIdentFalseNumberTrueElseIfVarWhileBoolIntAssignMultiplyDividePlusMinusLessLessOrEqualGreaterGreaterOrEqualEqualNotEqualNotAndOrLeftParenRightParenLeftBraceRightBrace"
+const _Type_name = "EOFErrorIdentFalseNumberTrueElseForIfVarBoolIntAssignMultiplyDividePlusMinusLessLessOrEqualGreaterGreaterOrEqualEqualNotEqualNotAndOrLeftParenRightParenLeftBraceRightBrace"
 
-var _Type_index = [...]uint8{3, 8, 13, 18, 24, 28, 32, 34, 37, 42, 46, 49, 55, 63, 69, 73, 78, 82, 93, 100, 114, 119, 127, 130, 133, 135, 144, 154, 163, 173}
+var _Type_index = [...]uint8{3, 8, 13, 18, 24, 28, 32, 35, 37, 40, 44, 47, 53, 61, 67, 71, 76, 80, 91, 98, 112, 117, 125, 128, 131, 133, 142, 152, 161, 171}
 
 func (i Type) String() string {
 	if i < 0 || i >= Type(len(_Type_index)) {
