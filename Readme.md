@@ -1,5 +1,4 @@
 [![Build Status](https://drone.io/github.com/davidrjenni/sc/status.png)](https://drone.io/github.com/davidrjenni/sc/latest)
-
 [![GoDoc](https://godoc.org/github.com/davidrjenni/sc?status.svg)](https://godoc.org/github.com/davidrjenni/sc)
 
 # sc - simple compiler
