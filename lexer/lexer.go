@@ -122,6 +122,15 @@ func (l *Lexer) emit(pos scanner.Position, text string, typ Type) {
 	l.Tokens <- Token{pos, text, typ}
 }
 
+// emitCombined combines the current and the next token and emits them.
+func (l *Lexer) emitCombined(typ Type) {
+	pos := l.scanner.Position
+	text := l.scanner.TokenText()
+	l.scanner.Scan()
+	text += l.scanner.TokenText()
+	l.emit(pos, text, typ)
+}
+
 // emitHere emits the current token to the channel of tokens.
 func (l *Lexer) emitHere(typ Type) {
 	l.emit(l.scanner.Position, l.scanner.TokenText(), typ)
@@ -130,11 +139,7 @@ func (l *Lexer) emitHere(typ Type) {
 // emitIfNext emits a token of type t1 if r matches the next rune. Otherwise a token of type t2 is emitted.
 func (l *Lexer) emitIfNext(r rune, t1, t2 Type) {
 	if l.scanner.Peek() == r {
-		pos := l.scanner.Position
-		text := l.scanner.TokenText()
-		l.scanner.Scan()
-		text += l.scanner.TokenText()
-		l.emit(pos, text, t1)
+		l.emitCombined(t1)
 	} else {
 		l.emit(l.scanner.Position, l.scanner.TokenText(), t2)
 	}
@@ -148,11 +153,7 @@ func (l *Lexer) errorf(format string, args ...interface{}) {
 // expect emits an token if r matches the next rune. Otherwise an error is emitted.
 func (l *Lexer) expect(r rune, typ Type, err string) {
 	if l.scanner.Peek() == r {
-		pos := l.scanner.Position
-		text := l.scanner.TokenText()
-		l.scanner.Scan()
-		text += l.scanner.TokenText()
-		l.emit(pos, text, typ)
+		l.emitCombined(typ)
 	} else {
 		l.errorf(err)
 	}
