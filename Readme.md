@@ -62,7 +62,6 @@ lit     : number
         | "false"
         ;
 ```
-Each ``else`` associates with the nearest ``if``.
 
 #### Keywords
 Following keywords are reserved. They cannot be used as identifiers.
