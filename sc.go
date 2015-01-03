@@ -8,6 +8,13 @@ Sc is a simple toy compiler. It compiles a simple subset of the Go programming l
 Installation:
 	% go get github.com/davidrjenni/sc
 
+Usage:
+	% sc <file> [flags]
+
+The flags are:
+	-o <file>
+			Direct output to the specified file instead of out.
+
 Example usage:
 	% sc examples/gcf.sc -o gcf
 	% ./gcf
