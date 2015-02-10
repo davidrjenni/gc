@@ -36,10 +36,11 @@ const (
 	Number // integer number
 	True   // true
 	// Keywords
-	Else // else
-	For  // for
-	If   // if
-	Var  // var
+	Else  // else
+	For   // for
+	If    // if
+	Print // print
+	Var   // var
 	// Types
 	Bool // bool
 	Int  // int
@@ -76,6 +77,7 @@ var keywords = map[string]Type{
 	"for":   For,
 	"if":    If,
 	"int":   Int,
+	"print": Print,
 	"true":  True,
 	"var":   Var,
 }

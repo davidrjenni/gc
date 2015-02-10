@@ -33,16 +33,17 @@ var lexerTests = []lexerTest{
 		newToken(True, "true", 1, 7),
 		newToken(False, "false", 1, 12),
 		newToken(EOF, "", 1, 17)}},
-	{"keywords", "bool else false if int true var for", []Token{
+	{"keywords", "bool else false if int print true var for", []Token{
 		newToken(Bool, "bool", 1, 1),
 		newToken(Else, "else", 1, 6),
 		newToken(False, "false", 1, 11),
 		newToken(If, "if", 1, 17),
 		newToken(Int, "int", 1, 20),
-		newToken(True, "true", 1, 24),
-		newToken(Var, "var", 1, 29),
-		newToken(For, "for", 1, 33),
-		newToken(EOF, "", 1, 36)}},
+		newToken(Print, "print", 1, 24),
+		newToken(True, "true", 1, 30),
+		newToken(Var, "var", 1, 35),
+		newToken(For, "for", 1, 39),
+		newToken(EOF, "", 1, 42)}},
 	{"operators", "= * / + - < <= == != >= > && || !", []Token{
 		newToken(Assign, "=", 1, 1),
 		newToken(Multiply, "*", 1, 3),

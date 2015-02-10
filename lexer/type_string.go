@@ -4,18 +4,13 @@ package lexer
 
 import "fmt"
 
-const _Type_name = "EOFErrorIdentFalseNumberTrueElseForIfVarBoolIntAssignMultiplyDividePlusMinusLessLessOrEqualGreaterGreaterOrEqualEqualNotEqualNotAndOrLeftParenRightParenLeftBraceRightBrace"
+const _Type_name = "EOFErrorIdentFalseNumberTrueElseForIfPrintVarBoolIntAssignMultiplyDividePlusMinusLessLessOrEqualGreaterGreaterOrEqualEqualNotEqualNotAndOrLeftParenRightParenLeftBraceRightBrace"
 
-var _Type_index = [...]uint8{3, 8, 13, 18, 24, 28, 32, 35, 37, 40, 44, 47, 53, 61, 67, 71, 76, 80, 91, 98, 112, 117, 125, 128, 131, 133, 142, 152, 161, 171}
+var _Type_index = [...]uint8{0, 3, 8, 13, 18, 24, 28, 32, 35, 37, 42, 45, 49, 52, 58, 66, 72, 76, 81, 85, 96, 103, 117, 122, 130, 133, 136, 138, 147, 157, 166, 176}
 
 func (i Type) String() string {
-	if i < 0 || i >= Type(len(_Type_index)) {
+	if i < 0 || i+1 >= Type(len(_Type_index)) {
 		return fmt.Sprintf("Type(%d)", i)
 	}
-	hi := _Type_index[i]
-	lo := uint8(0)
-	if i > 0 {
-		lo = _Type_index[i-1]
-	}
-	return _Type_name[lo:hi]
+	return _Type_name[_Type_index[i]:_Type_index[i+1]]
 }
