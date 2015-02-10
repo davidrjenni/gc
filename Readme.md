@@ -44,6 +44,7 @@ stmt    : var "=" expr
         | "if" expr "{" stmts "}"
         | "if" expr "{" stmts "}" "else" "{" stmts "}"
         | "for" expr "{" stmts "}"
+        | "print" "(" expr ")"
         ;
 expr    : "(" expr ")"
         | expr binop expr
@@ -66,7 +67,7 @@ lit     : number
 #### Keywords
 Following keywords are reserved. They cannot be used as identifiers.
 
-```bool, else, false, for, if, int, true, var```
+```bool, else, false, for, if, int, print, true, var```
 
 #### Operators and delimiters
 Following character sequences act as delimiters.
