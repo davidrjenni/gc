@@ -14,3 +14,4 @@ for a != b {
     }
 }
 f = a
+print(f)
