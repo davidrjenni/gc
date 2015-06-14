@@ -1,9 +1,9 @@
-[![Build Status](https://drone.io/github.com/davidrjenni/sc/status.png)](https://drone.io/github.com/davidrjenni/sc/latest)
-[![GoDoc](https://godoc.org/github.com/davidrjenni/sc?status.svg)](https://godoc.org/github.com/davidrjenni/sc)
+[![Build Status](https://drone.io/github.com/davidrjenni/gc/status.png)](https://drone.io/github.com/davidrjenni/gc/latest)
+[![GoDoc](https://godoc.org/github.com/davidrjenni/gc?status.svg)](https://godoc.org/github.com/davidrjenni/gc)
 
-# sc - simple compiler
+# gc - simple Go compiler
 
-sc is a simple compiler. It compiles a very simple subset of the [Go programming language](http://golang.org).
+gc is a simple compiler. It compiles a very simple subset of the [Go programming language](http://golang.org).
 
 The language has the types ``bool`` and ``int``. The control structures are ``if``, ``else`` and ``for``.
 
@@ -13,23 +13,27 @@ The language has the types ``bool`` and ``int``. The control structures are ``if
 This is an example of the language:
 
 ```
-/* Calculates the greatest common factor. */
-var a int
-var b int
-var f int
+package main
 
-a = 45
-b = 60
-for a != b {
-    if a < b {
-        b = b - a
-    }
-    if b < a {
-        a = a - b
-    }
+func main() {
+	/* Calculates the greatest common factor. */
+	var a int
+	var b int
+	var f int
+
+	a = 45
+	b = 60
+	for a != b {
+		if a < b {
+			b = b - a
+		}
+		if b < a {
+			a = a - b
+		}
+	}
+	f = a
+	print(f) // output: 15
 }
-f = a
-print(f) // output: 15
 ```
 
 ***
