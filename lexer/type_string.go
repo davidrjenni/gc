@@ -9,7 +9,7 @@ const _Type_name = "EOFErrorIdentFalseNumberTrueElseForIfPrintVarBoolIntAssignMu
 var _Type_index = [...]uint8{0, 3, 8, 13, 18, 24, 28, 32, 35, 37, 42, 45, 49, 52, 58, 66, 72, 76, 81, 85, 96, 103, 117, 122, 130, 133, 136, 138, 147, 157, 166, 176}
 
 func (i Type) String() string {
-	if i < 0 || i+1 >= Type(len(_Type_index)) {
+	if i < 0 || i >= Type(len(_Type_index)-1) {
 		return fmt.Sprintf("Type(%d)", i)
 	}
 	return _Type_name[_Type_index[i]:_Type_index[i+1]]
