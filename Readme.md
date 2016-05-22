@@ -1,5 +1,6 @@
 [![Build Status](https://drone.io/github.com/davidrjenni/gc/status.png)](https://drone.io/github.com/davidrjenni/gc/latest)
 [![GoDoc](https://godoc.org/github.com/davidrjenni/gc?status.svg)](https://godoc.org/github.com/davidrjenni/gc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/davidrjenni/gc)](https://goreportcard.com/report/github.com/davidrjenni/gc)
 
 # gc - simple Go compiler
 
